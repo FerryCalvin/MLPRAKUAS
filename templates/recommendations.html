@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Ponsel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rekomendasi Ponsel Berdasarkan Rating Anda</h1>
+        <ul class="recommendations-list">
+            {% for _, cellphone in cellphones.iterrows() %}
+            <li class="recommendation-item">
+                <h2>{{ cellphone['brand'] }} {{ cellphone['model'] }}</h2>
+                <p><strong>OS:</strong> {{ cellphone['operating system'] }}</p>
+                <p><strong>RAM:</strong> {{ cellphone['RAM'] }}GB</p>
+                <p><strong>Memori Internal:</strong> {{ cellphone['internal memory'] }}GB</p>
+                <p><strong>Kamera Utama:</strong> {{ cellphone['main camera'] }}MP</p>
+                <p><strong>Kamera Selfie:</strong> {{ cellphone['selfie camera'] }}MP</p>
+                <p><strong>Baterai:</strong> {{ cellphone['battery size'] }}mAh</p>
+                <p><strong>Layar:</strong> {{ cellphone['screen size'] }} inch</p>
+                <p><strong>Berat:</strong> {{ cellphone['weight'] }} gram</p>
+                <p><strong>Harga:</strong> ${{ cellphone['price'] }}</p>
+                <p><strong>Tanggal Rilis:</strong> {{ cellphone['release date'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="back-button">Kembali</a>
+    </div>
+</body>
+</html>

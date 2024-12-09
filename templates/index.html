@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Masukkan Rating Anda</h1>
+        <form method="POST" class="rating-form">
+            <label for="rating">Rating (1-10):</label>
+            <input type="number" id="rating" name="rating" min="1" max="10" required>
+            <button type="submit">Dapatkan Rekomendasi</button>
+        </form>
+    </div>
+</body>
+</html>
